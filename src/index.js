@@ -1,4 +1,5 @@
 import mapboxgl, { Marker } from 'mapbox-gl';
+import buildMarker from './marker.js'
 const marker = document.getElementById('marker');
 
 mapboxgl.accessToken =
@@ -11,4 +12,7 @@ const map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/streets-v10', // mapbox has lots of different map styles available.
 });
 
-new mapboxgl.Marker(marker).setLngLat([-74.009151, 40.705086]).addTo(map);
+// new mapboxgl.Marker(marker).setLngLat([-74.009151, 40.705086]).addTo(map);
+// new mapboxgl.Marker(buildMarker('activity')).setLngLat([-74.009151, 40.705086]).addTo(map);
+// new mapboxgl.Marker(buildMarker('hotel')).setLngLat([-74.009159, 40.705086]).addTo(map);
+buildMarker('hotel', [-74.009151, 40.705086]).addTo(map)
